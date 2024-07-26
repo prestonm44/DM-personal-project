@@ -1,10 +1,8 @@
 import { DataTypes, Model } from 'sequelize';
 import util from 'util';
-import connectToDB from './db.js';
+import db from '../config/db.js';
 
-const db = await connectToDB('postgresql:///security');
-
-class Building extends Model {
+export class Building extends Model {
     [util.inspect.custom]() {
         return this.toJSON();
     }
@@ -35,7 +33,7 @@ Building.init(
 );
 
 
-class User extends Model {
+export class User extends Model {
     [util.inspect.custom]() {
         return this.toJSON();
     }
@@ -44,7 +42,7 @@ class User extends Model {
 
 User.init(
     {
-        id: {
+        userId: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
@@ -59,7 +57,7 @@ User.init(
             allowNull: false,
             unique: true,
         }, 
-        Password: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: false,
