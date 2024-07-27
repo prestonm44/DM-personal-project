@@ -52,6 +52,11 @@ User.init(
             allowNull: false,
             unique: false,
         },
+        position: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: false,
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -59,6 +64,11 @@ User.init(
         }, 
         password: {
             type: DataTypes.STRING,
+            allowNull: false,
+            unique: false,
+        },
+        accessTypeId: {
+            type: DataTypes.INTEGER, 
             allowNull: false,
             unique: false,
         }

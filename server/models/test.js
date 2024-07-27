@@ -5,7 +5,7 @@
 import { Building, User } from "./userNProperty.js";
 
 import db from "../config/db.js";
-import { AccessPoint } from "./accessPoint.js";
+import { AccessPoint, AccessType } from "./accessPoint.js";
 
 await db.sync({
     force: true
@@ -19,6 +19,7 @@ const firstBuilding = Building.create({
 
 const firstUser = User.create({
     name: 'Henry Jones', 
+    position: 'CMO',
     email: 'preston@test.com',
     password: 'helloworld'
 })
@@ -28,3 +29,10 @@ const firstUser = User.create({
 const firstAccessPoint = AccessPoint.create({
     name: 'Front Door'
 })
+
+const firstAccessType = AccessType.create({
+    name: 'Managerial'
+})
+
+
+

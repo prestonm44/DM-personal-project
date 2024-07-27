@@ -1,4 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
+import { User } from './userNProperty.js';
 import util from 'util';
 import db from '../config/db.js';
 
@@ -50,7 +51,7 @@ AccessType.init(
         }
     }, 
     {
-        modelName: 'accessPoint',
+        modelName: 'accessType',
         sequelize: db,
     },
 );
@@ -58,4 +59,7 @@ AccessType.init(
 
 AccessType.hasMany(AccessPoint, { foreignKey: 'accessTypeId' });
 AccessPoint.belongsTo(AccessType, { foreignKey: 'accessTypeId'});
+
+AccessType.hasMany(User, { foreignKey: 'accessTypeId' });
+User.belongsTo(AccessType, { foreignKey: 'accessTypeId' });
 
