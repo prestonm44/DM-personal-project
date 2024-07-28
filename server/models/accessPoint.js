@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import { User } from './userNProperty.js';
+import { Building, User } from './userNBuilding.js';
 import util from 'util';
 import db from '../config/db.js';
 
@@ -21,7 +21,17 @@ AccessPoint.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: false,
-        }
+        },
+        buildingId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            unique: false,
+        },
+        accessTypeId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            unique: false,
+        },
     }, 
     {
         modelName: 'accessPoint',
@@ -62,4 +72,7 @@ AccessPoint.belongsTo(AccessType, { foreignKey: 'accessTypeId'});
 
 AccessType.hasMany(User, { foreignKey: 'accessTypeId' });
 User.belongsTo(AccessType, { foreignKey: 'accessTypeId' });
+
+AccessPoint.hasMany(Building, { foreignKey: 'buildingId' });
+Building.belongsTo(AccessPoint, { foreignKey: 'buildingId' });
 

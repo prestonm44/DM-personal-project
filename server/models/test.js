@@ -2,7 +2,7 @@
 //Test here
 //Does the .create method work?
 
-import { Building, User } from "./userNProperty.js";
+import { Building, User } from "./userNBuilding.js";
 
 import db from "../config/db.js";
 import { AccessPoint, AccessType } from "./accessPoint.js";
