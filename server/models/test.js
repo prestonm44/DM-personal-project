@@ -2,10 +2,8 @@
 //Test here
 //Does the .create method work?
 
-import { Building, User } from "./userNBuilding.js";
-
 import db from "../config/db.js";
-import { AccessPoint, AccessType } from "./accessPoint.js";
+import { AccessType, Building, User, AccessPoint } from "./model.js";
 
 await db.sync({
     force: true

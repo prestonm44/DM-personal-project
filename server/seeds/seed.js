@@ -1,9 +1,6 @@
 
-
-import { Building, User } from "../models/userNBuilding.js";
-
 import db from "../config/db.js";
-import { AccessPoint, AccessType } from "../models/accessPoint.js";
+import { AccessType, Building, User, AccessPoint } from "../models/model.js";
 
 await db.sync({
     force: true
