@@ -1,6 +1,6 @@
 
 import db from "../config/db.js";
-import { AccessType, Building, User, AccessPoint } from "../models/model.js";
+import { AccessType, Building, User, UserBuilding, AccessPoint } from "../models/model.js";
 
 await db.sync({
     force: true
@@ -114,7 +114,7 @@ const hope = await User.create({
     name: 'Hope', 
     position: 'Social Media Manager',
     email: 'hope@gtest.com',
-    password: 'alison',
+    password: 'hope',
     accessTypeId: 2
 })
 

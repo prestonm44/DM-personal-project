@@ -111,6 +111,39 @@ User.init(
 );
 
 
+//USER BUILDING MODEL
+
+export class UserBuilding extends Model {
+    [util.inspect.custom]() {
+        return this.toJSON();
+    }
+}
+
+UserBuilding.init(
+    {
+        userBuildingId: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        buildingId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            unique: false,
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            unique: false,
+        },
+    }, 
+    {
+        modelName: 'userBuilding',
+        sequelize: db,
+    },
+);
+
+
 //ACCESS POINT MODEL
 
 export class AccessPoint extends Model {
@@ -158,5 +191,8 @@ User.belongsTo(AccessType, { foreignKey: 'accessTypeId' });
 Building.hasMany(AccessPoint, { foreignKey: 'buildingId' });
 AccessPoint.belongsTo(Building, { foreignKey: 'buildingId' });
 
-User.hasMany(Building, { foreignKey: 'userId' });
-Building.belongsTo(User, { foreignKey: 'userId'});
+Building.hasMany(UserBuilding, { foreignKey: 'buildingId' });
+UserBuilding.belongsTo(Building, { foreignKey: 'buildingId' });
+
+User.hasMany(UserBuilding, { foreignKey: 'userId' });
+UserBuilding.belongsTo(User, { foreignKey: 'userId' });
