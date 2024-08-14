@@ -3,7 +3,7 @@ import session from 'express-session';
 import morgan from 'morgan';
 import ViteExpress from 'vite-express';
 
-import appRouter from './routes/index.js';
+// import appRouter from './routes/index.js';
 import { AccessPoint, Building, User } from './models/model.js';
 
 const app = express();
@@ -14,7 +14,11 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: false }));
-app.use(appRouter);
+// app.use(appRouter);
+
+
+
+/// LOGIN ///
 
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
@@ -50,7 +54,7 @@ app.get('/api/accessPoints', async (req, res) => {
     })
 })
 
-  app.post('/api/logout', loginRequired, (req, res) => {
+  app.post('/api/logout', (req, res) => {
     req.session.destroy();
     res.json({ success: true });
   });
