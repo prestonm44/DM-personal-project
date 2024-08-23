@@ -9,5 +9,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route path="/Users" element={<Users />} />
+      <Route path="/AccessPoints" element={<AccessPoints />} />
+    </Route>
+  )
+)
+
 
 ///ROUTE HANDLING - REACT ROUTER ///
