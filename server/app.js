@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: false }));
 // app.use(appRouter);
+app.use(express.static('public'));
 
 
 
