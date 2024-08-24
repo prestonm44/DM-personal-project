@@ -1,7 +1,7 @@
 import React from 'react';
 import '../bootstrap/phoenix-v1/assets/css/theme.css';
 
-const AccessPoints = () => {
+const AccessPoint = () => {
     return (
         <div className="content">
         <nav className="mb-3" aria-label="breadcrumb">
@@ -269,4 +269,4 @@ const AccessPoints = () => {
     )
 }
 
-export default AccessPoints;
+export default AccessPoint;
