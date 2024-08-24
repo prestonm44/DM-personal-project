@@ -8,12 +8,15 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom'
+import { Building } from './Components/Building.jsx'
+import { AccessPoint } from './Components/AccessPoint.jsx'
+import { User } from './Components/User.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route path="/AccessPoints" element={<AccessPoints />} />
-      <Route path="/Users" element={<Users />} />
+    <Route path="/" element={<Building />}>
+      <Route path="/AccessPoints" element={<AccessPoint />} />
+      <Route path="/Users" element={<User />} />
     </Route>
   )
 );

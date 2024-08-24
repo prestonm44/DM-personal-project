@@ -11,8 +11,9 @@ function App() {
   return (
     <main class="main" id="top">
       <NavBar />
-      <User />
-
+      <Link to="/">Buildings</Link>
+      <Link to="/Users">Users</Link>
+      <Link to="/AccessPoints">Access Points</Link>
       <div class="content">
         <Outlet />
       </div>
