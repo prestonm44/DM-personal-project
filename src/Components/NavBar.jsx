@@ -1,5 +1,4 @@
 import React from 'react';
-import '../bootstrap/phoenix-v1/assets/css/theme.css';
 
 const NavBar = () => {
   return (
