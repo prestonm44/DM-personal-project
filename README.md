@@ -5,7 +5,7 @@ This app was built as a platform in which an organization could manage it employ
 
 ## **BACKEND**
 
-For this project, I created a total of 5 tables within my Postgres database: 
+For this project, I created a total of 5 tables within my PostgreSQL database: 
   - access_points
   - access_types
   - buildings
@@ -14,6 +14,8 @@ For this project, I created a total of 5 tables within my Postgres database:
 The relationships for these tables were created within the models.js page.
 
 A seed database was created in which I added fields to the different tables.
+
+I used Express in the backend.
 
 I then created APIs within my app.js page that appear to be working (calling the correct data) based on some testing with Postman. 
 
